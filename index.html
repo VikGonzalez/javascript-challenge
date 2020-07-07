@@ -5,13 +5,9 @@
   <meta charset="utf-8">
   <title>UFO Finder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- IMPORTAR BOOTSRAP STRAP TABLE -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <!--  IMPORTAR D3 FRAMEWORK -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- MODIFICAR T+RUTA -->
-  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="static/css/style.css">
 </head>
 
 <body>
@@ -20,8 +16,7 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">UFO Sightings
-            <!-- CAMBIAR RUTA -->
-            <img class="nav-ufo" src="../static/Images/ufo.svg">
+            <img class="nav-ufo" src="static/Images/ufo.svg">
           </a>
         </div>
       </div>
@@ -66,7 +61,9 @@
                   <th class="table-head">Comments</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <a href="data.js"></a>  
+              </tbody>
             </table>
           </div>
         </div>
@@ -77,9 +74,8 @@
     </footer>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-  <!-- MODIFICAR RUTA -->
-  <script src="../static/js/data.js"></script>
-  <script src="../static/js/app.js"></script>
+  <script src="static/js/data.js"></script>
+  <script src="static/js/app.js"></script>
 </body>
 
 </html>

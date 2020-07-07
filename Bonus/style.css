@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    list-style: none;
+}
+
+body{
+    background: #eaeaea;
+}
+
+.wrapper .header{
+    background: #29a5d8;
+}
+
+.wrapper .title{
+    padding: 50px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+}
+
+.wrapper .search_box {
+    max-width: 1000px;
+    background: #29a5d8;
+    margin: 0 auto;
+    padding: 25px 0 50px;
+    border-radius: 3px;
+}
+
+.wrapper .search_box input {
+    border: 0;
+    border-bottom: 2px solid #ededfa;
+    width: 100%;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+}
+
+::placeholder{
+    color: #e5edfa;
+}
+
+.table_wrap{
+width: 1000px;
+margin: 50px auto 0;
+}
+
+.table_wrap ul li .item{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px 0;
+    0 15px
+} 
+
+
+
+.table_wrap ul li .item .datetime,
+.table_wrap ul li .item .city {
+    width: 20%;
+    padding: 0 15px;
+}
+
+.table_wrap ul li .item .state{
+    width: 20%;
+    padding: 0 15px;
+}
+
+.table_wrap ul li .item .country{
+    width: 20%;
+    padding: 0 15px;
+}
+
+.table_wrap ul li .item .shape{
+    width: 20%;
+    padding: 0 15px;
+}
+
+.table_wrap ul li .item .durationMinutes{
+    width: 20%;
+    padding: 0 15px;
+}
+
+.table_wrap ul li .item .comments{
+    width: 90%;
+    padding: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table_header ul li .item{
+    border-bottom: 2px solid #eaeaea;
+}
+
+.table_body ul li .item{
+    border-bottom: px solid #efefef;
+}
+
+.table_body ul li .item .fixed{
+    background: #cff1f0;
+    color: #0dbe;
+}
+
+.table_body ul li .item .closed{
+    background: #ffeedd;
+    color: #ff5599;
+}
+
+.table_body ul li .item .hold{
+    background: #fff0db;
+    color: #f59d39;
+}
+
+.table_body ul li .item .reopened{
+    background: #d6f2d6;
+    color: #292929;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

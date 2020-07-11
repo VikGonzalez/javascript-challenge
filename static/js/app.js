@@ -1,40 +1,66 @@
-// // IMPORTAR DATA
-var tableData = data;
-// CREAR SELECTORES 
-let button = d3.select("#filter-btn")
-let input = d3.select("#datetime") 
-// let form = d3.select("#filters")
-// CREAR FUNCIÓN
-function printResult(){
-        // SET PREVENT FORMULARY TO BE SENT TO SERVER
+let tbody = d3.select("tbody");
+let button = d3.select("boton");
+let form = d3.select("formulario");
+
+function ufoFilter(){
     d3.event.preventDefault();
-      // CAPTURAR EN UNA NUEVA VARIABLE LO QUE CAPTURA EL USUARIO
-    let tbody = d3.select("tbody");
-    tbody.html("");
-// CAPTURAR EN UNA NUEVA VARIABLE LOS VALORES CAPTURADOS POR EL USUARIO
-    let inputValue = d3.select("#datetime").property("value");
-    console.log(inputValue);
 
-    for(let i = 0; i<tableData.lenght; i++){
+    d3.selectAll("td").remove();
 
-        console.log(inputValue)
+    let dateInput = d3.select("#date-input");
+    let inputDate = inputSelect.property("value");
 
-        if(tableData[i].datetime === inputValue) {
-            console.log(i)
-    // INCRUSTAR EN EL HTML FILE EL RESULTADO DE LA CAPTURA
-            let tbody = d3.select("tbody");
-            let row = tbody.append("tr");
 
-            row.append("td").text(tableData[i].datetime)
-            row.append("td").text(tableData[i].city)
-            row.append("td").text(tableData[i].state)
-            row.append("td").text(tableData[i].country)
-            row.append("td").text(tableData[i].shape)
-            row.append("td").text(tableData[i].durationMinutes)
-            row.append("td").text(tableData[i].comments)
+
+    for (var i = 0; i < 2; i++){
+        if (dateformat[i][0]=== "0") {
+            dateFormated += dateformat[1][1] + "/"
+        } else {
+            dateFormated += dateformat[i] + "/"
         }
     }
-};
-// CREAR LISTENERS PARA BOTON Y FORMULARIO
-button.on("click", printResult);
-input.on("submit", printResult);
+
+    dateFormated += dateformat[2]
+
+    let query = {
+        datetime : dateFormated,
+        state : inputState,
+        shape : inputShape
+    };
+
+    console.log(query);
+
+    let filteredData = ufoData.filter(function(ufo){
+        for (let key in query) {
+            if (ufo[key] != query[key])
+            return false;
+        }
+        return true;
+    });
+
+    if (filteredData.length === 0) {
+        alert("Data not Found")     
+    };
+
+    console.log("UFOs filtered: ", filteredData);
+
+    filteredData.forEach(d=> {
+        let row = tbody.append("tr")
+        Object.values(d).forEach(w => {
+            let cell = row.append("td").text(w)
+        })
+    });
+}
+
+button.on("click", ufoFilter);
+form.on("submit", ufoFilter);
+
+//Bonus
+// let cityInput = d3.select("#city-input")
+// let inputCity = inputSelect.property("value")
+
+// let stateInput = d3.select("#state-input");
+// let inputState = inputSelect.property("value");
+
+// let shapeInput = d3.select("#shape-input")
+// let inputShape = inputSelect.property("value")
